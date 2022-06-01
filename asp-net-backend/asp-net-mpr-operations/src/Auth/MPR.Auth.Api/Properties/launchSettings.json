@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "MPR.Auth.Api": {
+      "commandName": "Project",
+      //"commandLineArgs": "/seedUsers",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5000"
+    }
+  }
+}

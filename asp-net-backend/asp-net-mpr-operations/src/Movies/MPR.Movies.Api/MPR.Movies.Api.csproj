@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>b1a4d27a-30d4-4658-a2b1-c99a2eae7ee3</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.16.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MPR.Movies.Configuration\MPR.Movies.Configuration.csproj" />
+    <ProjectReference Include="..\MPR.Movies.Data\MPR.Movies.Data.csproj" />
+    <ProjectReference Include="..\MPR.Movies.Logic\MPR.Movies.Logic.csproj" />
+    <ProjectReference Include="..\MPR.Movies.TheMovieDb\MPR.Movies.TheMovieDb.csproj" />
+  </ItemGroup>
+
+</Project>

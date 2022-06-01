@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.2" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MPR.Shared.Configuration\MPR.Shared.Configuration.csproj" />
+    <ProjectReference Include="..\MPR.Shared.Domain\MPR.Shared.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
