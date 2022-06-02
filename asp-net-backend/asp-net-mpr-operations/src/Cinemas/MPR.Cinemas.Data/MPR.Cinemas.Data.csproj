@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MPR.Shared.Data\MPR.Shared.Data.csproj" />
+    <ProjectReference Include="..\MPR.Cinemas.Logic\MPR.Cinemas.Logic.csproj" />
+  </ItemGroup>
+
+</Project>

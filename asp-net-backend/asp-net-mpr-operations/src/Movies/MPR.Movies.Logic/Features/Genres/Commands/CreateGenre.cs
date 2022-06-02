@@ -6,11 +6,13 @@ using MPR.Movies.Logic.Features.Genres.Extensions;
 using MPR.Movies.Logic.Features.Genres.Responses;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Responses;
+using NJsonSchema.Annotations;
 
 namespace MPR.Movies.Logic.Features.Genres.Commands
 {
     public class CreateGenre
     {
+        [JsonSchema("CreateGenreCommand")]
         public class Command : IRequest<Response<GenreResponse>>
         {
             public int? TheMovieDbId { get; set; }
@@ -40,7 +42,7 @@ namespace MPR.Movies.Logic.Features.Genres.Commands
                 var genreExists = _context.Genres.ToList().Any(x => x.Name.Equals(request.Name, StringComparison.OrdinalIgnoreCase));
                 if (genreExists)
                 {
-                    Response.CreateBadRequestResponse(ErrorCodes.GENRE_ALREADYEXISTS,
+                    return Response.CreateBadRequestResponse<GenreResponse>(ErrorCodes.GENRE_ALREADYEXISTS,
                         $"Genre with TheMovieDb Id {request.TheMovieDbId} already exists");
                 }
 

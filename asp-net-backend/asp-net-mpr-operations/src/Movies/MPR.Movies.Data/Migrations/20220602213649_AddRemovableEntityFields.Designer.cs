@@ -3,6 +3,7 @@ using System;
 using MPR.Movies.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MPR.Movies.Data.Migrations
 {
     [DbContext(typeof(MprMoviesDbContext))]
-    partial class MprMoviesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220602213649_AddRemovableEntityFields")]
+    partial class AddRemovableEntityFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

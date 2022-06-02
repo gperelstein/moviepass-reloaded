@@ -71,6 +71,8 @@ namespace MPR.Shared.Data
                     x =>
                     {
                         x.Property("MarkedAsDeleted").HasDefaultValue(false);
+                        x.Property("DeletedBy").HasDefaultValue(null);
+                        x.Property("DeletedAt").HasDefaultValue(null);
                     });
             }
         }
@@ -119,6 +121,13 @@ namespace MPR.Shared.Data
                 {
                     entry.Entity.Owner = userId.Value;
                 }
+            }
+
+            foreach (var entry in ChangeTracker.Entries<IRemovable>().Where(x => x.State == EntityState.Deleted))
+            {
+                entry.Entity.MarkedAsDeleted = true;
+                entry.Entity.DeletedBy = userId.Value;
+                entry.Entity.DeletedAt = lastUpdatedAt;
             }
         }
     }

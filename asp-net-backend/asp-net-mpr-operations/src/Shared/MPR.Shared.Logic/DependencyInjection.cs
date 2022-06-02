@@ -13,6 +13,7 @@ namespace MPR.Shared.Logic
         {
             var targetAssembly = mediatrAssemblyName != null ? AppDomain.CurrentDomain.Load(mediatrAssemblyName) : Assembly.GetExecutingAssembly();
 
+            services.AddHttpContextAccessor();
             services.AddValidatorsFromAssembly(targetAssembly);
             services.AddMediatR(targetAssembly);
             services.AddTransient<ICurrentUserService, CurrentUserService>();

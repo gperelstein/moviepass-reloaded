@@ -12,6 +12,7 @@ namespace MPR.Movies.Logic.Features.Movies.Commands
 {
     public class CreateMovie
     {
+        [JsonSchema("CreateMovieCommand")]
         public class Command : IRequest<Response<MovieResponse>>
         {
             public int? TheMovieDbId { get; set; }
@@ -44,7 +45,7 @@ namespace MPR.Movies.Logic.Features.Movies.Commands
 
                 if (movieExists)
                 {
-                    Response.CreateBadRequestResponse(ErrorCodes.MOVIE_ALREADYEXISTS,
+                    return Response.CreateBadRequestResponse<MovieResponse>(ErrorCodes.MOVIE_ALREADYEXISTS,
                         $"Movie with TheMovieDb Id {request.TheMovieDbId} already exists");
                 }
 

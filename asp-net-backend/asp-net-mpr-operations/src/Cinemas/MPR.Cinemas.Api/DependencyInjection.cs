@@ -2,11 +2,11 @@
 using Microsoft.IdentityModel.Tokens;
 using NSwag.Generation.Processors.Security;
 
-namespace MPR.Movies.Api
+namespace MPR.Cinemas.Api
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddMoviePresentation(this IServiceCollection services)
+        public static IServiceCollection AddCinemasPresentation(this IServiceCollection services)
         {
             services.AddCors(opt =>
             {

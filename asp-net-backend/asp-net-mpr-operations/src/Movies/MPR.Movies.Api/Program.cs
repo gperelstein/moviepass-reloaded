@@ -12,7 +12,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.Configure<MoviesServiceOptions>(
     builder.Configuration.GetSection(MoviesServiceOptions.AppConfiguration));
-builder.Services.AddHttpContextAccessor();
 builder.Services.AddMoviePresentation();
 builder.Services.AddMoviesLogic();
 builder.Services.AddMoviesData(builder.Configuration);
