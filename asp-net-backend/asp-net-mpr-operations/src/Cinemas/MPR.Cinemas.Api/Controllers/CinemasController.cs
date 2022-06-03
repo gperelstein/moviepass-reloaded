@@ -12,6 +12,7 @@ namespace MPR.Cinemas.Api.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
+    [Authorize]
     public class CinemasController : ControllerBase
     {
         private readonly IMediator _mediator;
