@@ -12,7 +12,7 @@ namespace MPR.Movies.Api.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
-    [Authorize]
+    [Authorize(Roles = RoleCodes.ADMIN)]
     public class GenresController : ControllerBase
     {
         private readonly IMediator _mediator;

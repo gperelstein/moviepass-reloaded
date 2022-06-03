@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MPR.Cinemas.Logic.Features.Cinemas.Commands;
 using MPR.Cinemas.Logic.Features.Cinemas.Queries;
 using MPR.Cinemas.Logic.Features.Cinemas.Responses;
+using MPR.Shared.Domain.Authorization;
 using MPR.Shared.Logic.Pagination;
 using NSwag.Annotations;
 using System.Net;
@@ -12,7 +13,7 @@ namespace MPR.Cinemas.Api.Controllers
 {
     [ApiController]
     [Route("[Controller]")]
-    [Authorize]
+    [Authorize(Roles = RoleCodes.ADMIN)]
     public class CinemasController : ControllerBase
     {
         private readonly IMediator _mediator;

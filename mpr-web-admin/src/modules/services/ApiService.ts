@@ -46,7 +46,7 @@ export class ApiService {
 
     public static async protectedRequest<T>(path: string, options: IOptionRequest): Promise<AxiosResponse<T>> {
         var user = await userManager.getUser();
-        return this.createRequest<T>(path, options, user?.id_token as string);
+        return this.createRequest<T>(path, options, user?.access_token as string);
     }
 
     private static createRequest<T>(path: string, options: IOptionRequest, token: string): Promise<AxiosResponse<T>> {
