@@ -7,6 +7,7 @@ using MPR.Movies.Logic.Features.Movies.Extensions;
 using MPR.Movies.Logic.Features.Movies.Responses;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Responses;
+using NJsonSchema.Annotations;
 
 namespace MPR.Movies.Logic.Features.Movies.Commands
 {

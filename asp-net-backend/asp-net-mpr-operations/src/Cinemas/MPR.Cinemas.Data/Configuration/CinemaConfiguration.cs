@@ -18,7 +18,8 @@ namespace MPR.Cinemas.Data.Configuration
 
             builder.HasMany(x => x.Rooms)
                    .WithOne(x => x.Cinema)
-                   .HasForeignKey(x => x.CinemaId);
+                   .HasForeignKey(x => x.CinemaId)
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

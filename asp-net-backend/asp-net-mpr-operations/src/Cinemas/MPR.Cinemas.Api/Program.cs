@@ -1,11 +1,13 @@
 using MPR.Cinemas.Api;
+using MPR.Cinemas.Configuration;
 using MPR.Cinemas.Data;
 using MPR.Cinemas.Logic;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.Configure<CinemasServiceOptions>(
+    builder.Configuration.GetSection(CinemasServiceOptions.AppConfiguration));
 builder.Services.AddCinemasPresentation();
 builder.Services.AddCinemasLogic();
 builder.Services.AddCinemasData(builder.Configuration);

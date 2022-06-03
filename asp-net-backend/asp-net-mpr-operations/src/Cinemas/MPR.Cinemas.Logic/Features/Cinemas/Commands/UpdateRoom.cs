@@ -47,7 +47,7 @@ namespace MPR.Cinemas.Logic.Features.Cinemas.Commands
             public async Task<Response<RoomResponse>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var cinema = await _context.Cinemas
-                                           .Include(x => x.Rooms.SingleOrDefault(y => y.Id == request.RoomId))
+                                           .Include(x => x.Rooms.Where(y => y.Id == request.RoomId))
                                            .SingleOrDefaultAsync(x => x.Id == request.CinemaId, cancellationToken);
 
                 if (cinema == null)

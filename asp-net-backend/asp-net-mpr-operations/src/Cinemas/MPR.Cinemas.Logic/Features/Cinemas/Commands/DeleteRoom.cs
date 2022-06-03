@@ -27,7 +27,7 @@ namespace MPR.Cinemas.Logic.Features.Cinemas.Commands
             public async Task<Response<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
                 var cinema = await _context.Cinemas
-                                           .Include(x => x.Rooms.SingleOrDefault(x => x.Id == request.RoomId))
+                                           .Include(x => x.Rooms.Where(x => x.Id == request.RoomId))
                                            .SingleOrDefaultAsync(x => x.Id == request.CinemaId, cancellationToken);
 
                 if (cinema == null)
@@ -36,13 +36,15 @@ namespace MPR.Cinemas.Logic.Features.Cinemas.Commands
                         $"Cinema with Id {request.CinemaId} not exists");
                 }
 
-                if (cinema.Rooms == null || !cinema.Rooms.Any())
+                var room = cinema.Rooms.SingleOrDefault();
+
+                if (room == null)
                 {
                     return Response.CreateBadRequestResponse<Unit>(ErrorCodes.ROOM_NOTEXISTS,
                         $"Room with Id {request.RoomId} not exists");
                 }
 
-                _context.Rooms.Remove(cinema.Rooms.First());
+                _context.Rooms.Remove(room);
                 await _context.SaveChangesAsync(cancellationToken);
 
                 return new Response<Unit> { Payload = Unit.Value };
