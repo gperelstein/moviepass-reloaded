@@ -1,10 +1,9 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MPR.Movies.Logic.Features.Genres.Commands;
-using MPR.Movies.Logic.Features.Genres.Responses;
 using MPR.Shared.Domain.Authorization;
+using MPR.Shared.Logic.Responses.Features.Genres;
 using NSwag.Annotations;
 using System.Net;
 

@@ -1,5 +1,5 @@
-﻿using MPR.Cinemas.Logic.Features.Cinemas.Responses;
-using MPR.Shared.Domain.Models;
+﻿using MPR.Shared.Domain.Models;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 
 namespace MPR.Cinemas.Logic.Features.Cinemas.Extensions
 {

@@ -1,6 +1,6 @@
 ﻿using MPR.Movies.Logic.Features.Genres.Extensions;
-using MPR.Movies.Logic.Features.Movies.Responses;
 using MPR.Shared.Domain.Models;
+using MPR.Shared.Logic.Responses.Features.Movies;
 
 namespace MPR.Movies.Logic.Features.Movies.Extensions
 {

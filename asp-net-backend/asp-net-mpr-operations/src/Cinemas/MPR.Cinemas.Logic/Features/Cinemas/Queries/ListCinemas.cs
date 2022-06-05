@@ -3,9 +3,9 @@ using Microsoft.Extensions.Options;
 using MPR.Cinemas.Configuration;
 using MPR.Cinemas.Logic.Abstractions;
 using MPR.Cinemas.Logic.Features.Cinemas.Extensions;
-using MPR.Cinemas.Logic.Features.Cinemas.Responses;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Pagination;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 
 namespace MPR.Cinemas.Logic.Features.Cinemas.Queries
 {

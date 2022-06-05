@@ -1,4 +1,4 @@
-﻿namespace MPR.Movies.Logic.Features.Genres.Responses
+﻿namespace MPR.Shared.Logic.Responses.Features.Genres
 {
     public class GenreResponse
     {

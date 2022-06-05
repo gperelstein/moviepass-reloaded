@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Net.Http.Headers;
 using MPR.Shared.Logic.Abstractions;
 using System.Security.Claims;
 
@@ -22,6 +23,13 @@ namespace MPR.Shared.Logic.Implementations
             }
 
             return null;
+        }
+
+        public string GetToken()
+        {
+            var token = _httpContextAccessor.HttpContext.Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+
+            return token;
         }
     }
 }

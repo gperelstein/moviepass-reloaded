@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using MPR.Cinemas.Logic.Abstractions;
 using MPR.Cinemas.Logic.Errors;
 using MPR.Cinemas.Logic.Features.Cinemas.Extensions;
-using MPR.Cinemas.Logic.Features.Cinemas.Responses;
 using MPR.Shared.Logic.Responses;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 using NJsonSchema.Annotations;
 using System.Text.Json.Serialization;
 

@@ -1,6 +1,6 @@
-﻿using MPR.Movies.Logic.Features.Genres.Responses;
+﻿using MPR.Shared.Logic.Responses.Features.Genres;
 
-namespace MPR.Movies.Logic.Features.Movies.Responses
+namespace MPR.Shared.Logic.Responses.Features.Movies
 {
     public class MovieResponse
     {

@@ -1,10 +1,11 @@
-﻿namespace MPR.Cinemas.Logic.Features.Cinemas.Responses
+﻿namespace MPR.Shared.Logic.Responses.Features.Cinemas
 {
-    public class CinemaResponse
+    public class RoomResponse
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public int Capacity { get; set; }
+        public decimal TicketValue { get; set; }
+        public CinemaResponse Cinema { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime LastUpdatedAt { get; set; }
         public Guid Owner { get; set; }

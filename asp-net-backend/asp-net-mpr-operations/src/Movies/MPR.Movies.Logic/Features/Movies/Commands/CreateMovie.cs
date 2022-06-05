@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using MPR.Movies.Logic.Abstractions;
 using MPR.Movies.Logic.Errors;
 using MPR.Movies.Logic.Features.Movies.Extensions;
-using MPR.Movies.Logic.Features.Movies.Responses;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Responses;
+using MPR.Shared.Logic.Responses.Features.Movies;
 using NJsonSchema.Annotations;
 
 namespace MPR.Movies.Logic.Features.Movies.Commands

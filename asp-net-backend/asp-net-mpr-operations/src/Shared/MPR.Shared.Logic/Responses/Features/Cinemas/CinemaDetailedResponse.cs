@@ -1,4 +1,4 @@
-﻿namespace MPR.Cinemas.Logic.Features.Cinemas.Responses
+﻿namespace MPR.Shared.Logic.Responses.Features.Cinemas
 {
     public class CinemaDetailedResponse : CinemaResponse
     {

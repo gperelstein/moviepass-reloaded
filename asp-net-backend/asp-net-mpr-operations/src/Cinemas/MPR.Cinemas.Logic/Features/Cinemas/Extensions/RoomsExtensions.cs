@@ -1,5 +1,5 @@
-﻿using MPR.Cinemas.Logic.Features.Cinemas.Responses;
-using MPR.Shared.Domain.Models;
+﻿using MPR.Shared.Domain.Models;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 
 namespace MPR.Cinemas.Logic.Features.Cinemas.Extensions
 {
@@ -10,6 +10,7 @@ namespace MPR.Cinemas.Logic.Features.Cinemas.Extensions
             Id = room.Id,
             Capacity = room.Capacity,
             TicketValue = room.TicketValue,
+            Cinema = room.Cinema.ToResponse(),
             Owner = room.Owner,
             CreatedAt = room.CreatedAt,
             LastUpdatedAt = room.LastUpdatedAt,

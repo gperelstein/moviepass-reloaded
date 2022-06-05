@@ -3,9 +3,9 @@ using MediatR;
 using MPR.Movies.Logic.Abstractions;
 using MPR.Movies.Logic.Errors;
 using MPR.Movies.Logic.Features.Genres.Extensions;
-using MPR.Movies.Logic.Features.Genres.Responses;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Responses;
+using MPR.Shared.Logic.Responses.Features.Genres;
 using NJsonSchema.Annotations;
 
 namespace MPR.Movies.Logic.Features.Genres.Commands

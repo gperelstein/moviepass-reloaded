@@ -6,5 +6,6 @@ namespace MPR.Movies.Logic.Errors
     {
         public const string GENRE_ALREADYEXISTS = "GENRE_ALREADYEXISTS";
         public const string MOVIE_ALREADYEXISTS = "MOVIE_ALREADYEXISTS";
+        public const string MOVIE_NOTEXISTS = "MOVIE_NOTEXISTS";
     }
 }

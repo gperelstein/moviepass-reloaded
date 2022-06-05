@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using MPR.Cinemas.Logic.Abstractions;
 using MPR.Cinemas.Logic.Errors;
 using MPR.Cinemas.Logic.Features.Cinemas.Extensions;
-using MPR.Cinemas.Logic.Features.Cinemas.Responses;
 using MPR.Shared.Logic.Responses;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 
 namespace MPR.Cinemas.Logic.Features.Cinemas.Queries
 {
@@ -29,7 +29,7 @@ namespace MPR.Cinemas.Logic.Features.Cinemas.Queries
             {
                 var cinema = await _context.Cinemas
                                            .AsNoTracking()
-                                           .Include(x => x.Rooms.SingleOrDefault(y => y.Id == request.RoomId))
+                                           .Include(x => x.Rooms.Where(y => y.Id == request.RoomId))
                                            .SingleOrDefaultAsync(x => x.Id == request.CinemaId, cancellationToken);
 
                 if (cinema == null)

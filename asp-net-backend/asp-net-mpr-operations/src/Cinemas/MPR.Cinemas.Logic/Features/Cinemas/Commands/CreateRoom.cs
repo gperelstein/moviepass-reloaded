@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using MPR.Cinemas.Logic.Abstractions;
 using MPR.Cinemas.Logic.Errors;
 using MPR.Cinemas.Logic.Features.Cinemas.Extensions;
-using MPR.Cinemas.Logic.Features.Cinemas.Responses;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Responses;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 using NJsonSchema.Annotations;
 using System.Text.Json.Serialization;
 
@@ -47,7 +47,7 @@ namespace MPR.Cinemas.Logic.Features.Cinemas.Commands
             {
                 var cinema = await _context.Cinemas.SingleOrDefaultAsync(x => x.Id == request.CinemaId, cancellationToken);
 
-                if(cinema == null)
+                if (cinema == null)
                 {
                     return Response.CreateBadRequestResponse<RoomResponse>(ErrorCodes.CINEMA_NOTEXISTS,
                         $"Cinema with Id {request.CinemaId} not exists");

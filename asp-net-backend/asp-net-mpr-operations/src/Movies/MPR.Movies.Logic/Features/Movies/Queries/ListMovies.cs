@@ -3,11 +3,9 @@ using Microsoft.Extensions.Options;
 using MPR.Movies.Configuration;
 using MPR.Movies.Logic.Abstractions;
 using MPR.Movies.Logic.Features.Movies.Extensions;
-using MPR.Movies.Logic.Features.Movies.Responses;
-using MPR.Shared.Configuration;
-using MPR.Shared.Configuration.Configuration;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Pagination;
+using MPR.Shared.Logic.Responses.Features.Movies;
 
 namespace MPR.Movies.Logic.Features.Movies.Queries
 {

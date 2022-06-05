@@ -2,11 +2,11 @@
 using Microsoft.IdentityModel.Tokens;
 using NSwag.Generation.Processors.Security;
 
-namespace MPR.Cinemas.Api
+namespace MPR.Shows.Api
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddCinemasPresentation(this IServiceCollection services)
+        public static IServiceCollection AddShowsPresentation(this IServiceCollection services)
         {
             services.AddCors(opt =>
             {
@@ -35,8 +35,8 @@ namespace MPR.Cinemas.Api
             services.AddOpenApiDocument(document =>
             {
                 document.Version = "v1";
-                document.Title = "Cinemas";
-                document.Description = "Cinemas Api";
+                document.Title = "Shows";
+                document.Description = "Shows Api";
                 document.OperationProcessors.Add(new OperationSecurityScopeProcessor("JWT"));
                 document.AddSecurity("JWT", new NSwag.OpenApiSecurityScheme
                 {

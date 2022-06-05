@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MPR.Cinemas.Logic.Features.Cinemas.Commands;
 using MPR.Cinemas.Logic.Features.Cinemas.Queries;
-using MPR.Cinemas.Logic.Features.Cinemas.Responses;
 using MPR.Shared.Domain.Authorization;
 using MPR.Shared.Logic.Pagination;
+using MPR.Shared.Logic.Responses.Features.Cinemas;
 using NSwag.Annotations;
 using System.Net;
 

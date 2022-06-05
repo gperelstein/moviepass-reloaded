@@ -3,5 +3,6 @@
     public interface ICurrentUserService
     {
         Guid? GetUserId();
+        string GetToken();
     }
 }
