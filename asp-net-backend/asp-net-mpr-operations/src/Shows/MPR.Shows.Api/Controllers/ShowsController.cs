@@ -27,10 +27,10 @@ namespace MPR.Shows.Api.Controllers
             summary: "Creates a new cinema",
             description: "Creates a new cinema and return it"
         )]
-        [SwaggerResponse(HttpStatusCode.OK, typeof(ShowResponse), Description = "Ok")]
+        [SwaggerResponse(HttpStatusCode.OK, typeof(ShowDetailedResponse), Description = "Ok")]
         [SwaggerResponse(HttpStatusCode.InternalServerError, typeof(ValidationProblemDetails), Description = "Error while processing the request")]
         [SwaggerResponse(HttpStatusCode.Unauthorized, null, Description = "User must be authenticated")]
-        public async Task<ActionResult<ShowResponse>> CreateCinema([FromBody] CreateShow.Command command)
+        public async Task<ActionResult<ShowDetailedResponse>> CreateCinema([FromBody] CreateShows.Command command)
         {
             var response = await _mediator.Send(command);
 

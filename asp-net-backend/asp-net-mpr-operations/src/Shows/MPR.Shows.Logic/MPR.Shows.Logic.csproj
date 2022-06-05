@@ -7,10 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Shared\MPR.Shared.Logic\MPR.Shared.Logic.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Shows\Queries\" />
+    <ProjectReference Include="..\MPR.Shows.Configuration\MPR.Shows.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>

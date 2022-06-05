@@ -7,7 +7,20 @@ namespace MPR.Shows.Logic.Features.Shows.Extensions
 {
     public static class ShowExtensions
     {
-        public static ShowResponse ToResponse(this Show show, MovieResponse movie, RoomResponse room) => new()
+        public static ShowResponse ToResponse(this Show show) => new()
+        {
+            Id = show.Id,
+            StartAt = show.StartAt,
+            EndAt = show.EndAt,
+            MovieId = show.MovieId,
+            RoomId = show.RoomId,
+            CreatedAt = show.CreatedAt,
+            LastUpdatedAt = show.LastUpdatedAt,
+            LastUpdatedBy = show.LastUpdatedBy,
+            Owner = show.Owner
+        };
+
+        public static ShowDetailedResponse ToDetailedResponse(this Show show, MovieResponse movie, RoomResponse room) => new()
         {
             Id = show.Id,
             StartAt = show.StartAt,
