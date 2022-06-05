@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MPR.Shared.Logic\MPR.Shared.Logic.csproj" />
+    <ProjectReference Include="..\MPR.Auth.Data\MPR.Auth.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\UsersSelf\Extensions\" />
+    <Folder Include="Features\Users\Extensions\" />
+    <Folder Include="Features\Users\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NJsonSchema" Version="10.7.2" />
+  </ItemGroup>
+
+</Project>
