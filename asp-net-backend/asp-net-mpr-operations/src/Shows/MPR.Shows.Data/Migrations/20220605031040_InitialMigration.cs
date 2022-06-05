@@ -24,6 +24,7 @@ namespace MPR.Shows.Data.Migrations
                     StartAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     EndAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     MovieId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CinemaId = table.Column<Guid>(type: "uuid", nullable: false),
                     RoomId = table.Column<Guid>(type: "uuid", nullable: false),
                     Owner = table.Column<Guid>(type: "uuid", nullable: false),
                     LastUpdatedBy = table.Column<Guid>(type: "uuid", nullable: false),

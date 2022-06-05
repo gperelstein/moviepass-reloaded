@@ -76,6 +76,7 @@ namespace MPR.Shows.Logic.Features.Shows.Commands
                     EndAt = x.AddMinutes(movie.Duration).AddMinutes(15),
                     MovieId = movie.Id,
                     RoomId = room.Id,
+                    CinemaId = request.CinemaId,
                 }).ToList();
 
                 var minStartDate = newShows.Min(y => y.StartAt);
