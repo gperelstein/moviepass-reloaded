@@ -5,6 +5,7 @@ using MPR.Cinemas.Logic.Errors;
 using MPR.Cinemas.Logic.Features.Cinemas.Extensions;
 using MPR.Shared.Logic.Responses;
 using MPR.Shared.Logic.Responses.Features.Cinemas;
+using MPR.Shared.Messaging.Abstractions;
 
 namespace MPR.Cinemas.Logic.Features.Cinemas.Queries
 {

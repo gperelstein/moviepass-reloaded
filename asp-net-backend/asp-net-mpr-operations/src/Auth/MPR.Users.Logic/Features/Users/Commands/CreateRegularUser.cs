@@ -5,7 +5,10 @@ using MPR.Shared.Domain.Authorization;
 using MPR.Shared.Domain.Models;
 using MPR.Shared.Logic.Responses;
 using MPR.Shared.Logic.Responses.Features.Users;
+using MPR.Shared.Notifications.Messages;
+using MPR.Shared.Notifications.Templates;
 using MPR.Users.Logic.Errors;
+using MPR.Users.Logic.Notifications;
 
 namespace MPR.Users.Logic.Features.Users.Commands
 {
@@ -22,11 +25,15 @@ namespace MPR.Users.Logic.Features.Users.Commands
         {
             private readonly UserManager<User> _userManager;
             private readonly MprAuthDbContext _context;
+            private readonly NotificationsProducer _notificationProducer;
 
-            public Handler(UserManager<User> userManager, MprAuthDbContext context)
+            public Handler(UserManager<User> userManager,
+                MprAuthDbContext context,
+                NotificationsProducer notificationProducer)
             {
                 _userManager = userManager;
                 _context = context;
+                _notificationProducer = notificationProducer;
             }
 
             public async Task<Response<UserResponse>> Handle(Command request, CancellationToken cancellationToken)
@@ -57,12 +64,23 @@ namespace MPR.Users.Logic.Features.Users.Commands
                 await _context.Profiles.AddAsync(profile, cancellationToken);
                 await _context.SaveChangesAsync(newUser.Id, cancellationToken);
 
-                await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+                var notification = CreateNotification(token, request.Email, request.FirstName);
+
+                _notificationProducer.SendMessage(notification);
 
                 var user = new UserResponse();
 
                 return new Response<UserResponse> { Payload = user };
             }
+
+            private UserRegistration CreateNotification(string token, string email, string firstName) => new UserRegistration
+            {
+                RegistrationLink = token,
+                To = email,
+                FirstName = firstName,
+                Subject = "Welcome to MoviePass"
+            };
         }
     }
 }

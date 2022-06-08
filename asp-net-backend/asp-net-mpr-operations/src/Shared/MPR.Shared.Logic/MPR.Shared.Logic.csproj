@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MPR.Shared.Configuration\MPR.Shared.Configuration.csproj" />
     <ProjectReference Include="..\MPR.Shared.Domain\MPR.Shared.Domain.csproj" />
+    <ProjectReference Include="..\MPR.Shared.Messaging\MPR.Shared.Messaging.csproj" />
   </ItemGroup>
 
 </Project>

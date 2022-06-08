@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using MPR.Shared.Logic.Abstractions;
 using MPR.Shared.Logic.Implementations;
+using MPR.Shared.Messaging;
 using System.Reflection;
 
 namespace MPR.Shared.Logic

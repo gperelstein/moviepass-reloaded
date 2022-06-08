@@ -16,10 +16,10 @@ namespace MPR.Auth.Data.Configurations
             builder.ToTable("Profiles");
 
             builder.Property(x => x.FirstName)
-                .HasColumnType("nvarchar(50)");
+                .HasColumnType("varchar(50)");
 
             builder.Property(x => x.LastName)
-                .HasColumnType("nvarchar(50)");
+                .HasColumnType("varchar(50)");
 
             builder.HasOne(x => x.User)
                 .WithOne()
