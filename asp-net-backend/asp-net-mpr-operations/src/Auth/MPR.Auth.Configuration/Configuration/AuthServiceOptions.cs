@@ -1,6 +1,5 @@
-﻿namespace MPR.Auth.Configuration.Configuration
+﻿namespace MPR.Auth.Configuration.Configuration;
+
+public class AuthServiceOptions
 {
-    public class AuthServiceOptions
-    {
-    }
 }
