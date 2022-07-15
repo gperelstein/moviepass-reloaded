@@ -10,4 +10,5 @@ export const ROUTES = {
   MOVIESLIST: { path: '/movieslist' },
   TMDB: { path: '/themoviedb' },
   CREATE_MOVIE: { path: '/themoviedb/movies/:id', basePath: '/themoviedb/movies/' },
+  CINEMAS: { path: '/cinemas' },
 };

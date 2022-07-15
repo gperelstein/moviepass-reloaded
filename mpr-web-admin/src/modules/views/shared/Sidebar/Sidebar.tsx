@@ -17,6 +17,7 @@ const Sidebar = () => {
     const tabMap = {
         dashboard: 0,
         movies: 1,
+        cinemas: 2,
     };
     return tabMap;
   }, []);
@@ -54,6 +55,13 @@ const Sidebar = () => {
           to={ROUTES.MOVIES.path}
           icon={<MoviesIcon />}
           index={1}
+        />
+        <LinkTab
+          selectedValue={indexTabMap[pathname] === indexTabMap.projects}
+          label="Cinemas"
+          to={ROUTES.CINEMAS.path}
+          icon={<MoviesIcon />}
+          index={2}
         />
       </Tabs>
     </div>
